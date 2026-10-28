@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bocatería El Cantó en Benifaió | Bocadillos, almuerzos y cenas</title>
+<meta name="description" content="Bar Restaurante El Cantó, bocatería en Benifaió: bocadillos en pan de pueblo, almuerzos, menú del día, tardeo y cenas. Llama al 961 78 10 44.">
+<meta name="theme-color" content="#0d0c0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#0d0c0b;
+  --hueso:#f2eee2;
+  --corteza:#b88b62;
+  --corteza-osc:#8a5a2b;
+  --vino:#543532;
+  --salvia:#b7c7aa;
+  --f:28px;
+  --display:'Rozha One',Georgia,serif;
+  --texto:'Schibsted Grotesk',Helvetica,Arial,sans-serif;
+  --mano:'Yellowtail',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--hueso);color:var(--tinta);font-family:var(--texto);font-size:1.0625rem;line-height:1.55;padding-bottom:76px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--corteza-osc);outline-offset:3px}
+.night :focus-visible,.bar :focus-visible{outline-color:var(--salvia)}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* marcado de datos por confirmar */
+.ver-editables .edit{outline:2px dashed #d6246e;outline-offset:2px;background:rgba(255,226,0,.45);color:#000}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.8rem 1.5rem;font:700 1rem var(--texto);text-decoration:none;border:2px solid var(--tinta);background:var(--tinta);color:var(--hueso);border-radius:2px;cursor:pointer;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--corteza)}
+.btn.line{background:transparent;color:var(--tinta)}
+.btn.line:hover{background:var(--tinta);color:var(--hueso)}
+.btn.sal{background:var(--salvia);border-color:var(--salvia);color:var(--tinta)}
+.btn.hue{background:var(--hueso);border-color:var(--hueso);color:var(--tinta)}
+.btn.hue.line{background:transparent;color:var(--hueso)}
+.btn.hue.line:hover{background:var(--hueso);color:var(--tinta)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* cabecera */
+header.top{position:sticky;top:0;z-index:30;background:var(--hueso);border-bottom:2px solid var(--tinta)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px}
+.marca{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.marca svg{width:50px;height:50px}
+.marca b{font:400 1.45rem/1 var(--mano)}
+nav.menu{display:none}
+nav.menu a{text-decoration:none;font-weight:500;padding:.5rem .2rem;border-bottom:2px solid transparent}
+nav.menu a:hover{border-color:var(--tinta)}
+header.top .btn{min-height:44px;padding:.5rem 1rem;font-size:.95rem}
+
+/* hero */
+.hero{position:relative;padding:2.2rem 0 0;overflow:hidden}
+.hero .wrap{display:grid;gap:1.6rem}
+.estado{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:.95rem;border:2px solid var(--tinta);padding:.35rem .9rem .35rem .6rem;border-radius:99px;width:fit-content;background:var(--hueso)}
+.estado i{width:12px;height:12px;border-radius:50%;background:#7a7a7a;flex:none}
+.estado.abierto i{background:#2f8a46;box-shadow:0 0 0 4px rgba(47,138,70,.22)}
+.hero h1{font:400 clamp(3.1rem,15.5vw,9.5rem)/.9 var(--display);letter-spacing:-.02em}
+.hero h1 span{display:block}
+.hero h1 .s2{padding-left:.55em}
+.hero h1 .s3{padding-left:.15em;color:var(--corteza-osc)}
+.hero .lema{max-width:30ch;font-size:1.2rem;line-height:1.45}
+.hero .lema em{font:400 1.7rem/1 var(--mano);font-style:normal}
+.hero .acc{display:flex;flex-wrap:wrap;gap:.8rem}
+.foto-hero{position:relative;margin-right:-20px;margin-top:.5rem}
+.corner{position:relative;--flap:var(--tinta)}
+.corner img{width:100%;height:100%;object-fit:cover;clip-path:polygon(var(--f) 0,100% 0,100% 100%,0 100%,0 var(--f))}
+.corner::after{content:"";position:absolute;left:0;top:0;width:var(--f);height:var(--f);background:var(--flap);clip-path:polygon(0 0,100% 100%,0 100%)}
+.foto-hero.corner{aspect-ratio:4/4.6}
+.sello{position:absolute;left:-14px;bottom:-30px;width:132px;height:132px;z-index:3}
+.sello svg{width:100%;height:100%;animation:gira 40s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+
+/* banda de datos */
+.bar{background:var(--tinta);color:var(--hueso);padding:2.8rem 0 2.4rem;margin-top:2.6rem;position:relative}
+.bar .wrap{display:grid;gap:1.8rem 1rem;grid-template-columns:1fr 1fr}
+.dato b{display:block;font:400 clamp(2.4rem,9vw,4rem)/1 var(--display)}
+.dato span{font-size:.95rem;opacity:.85}
+.dato.g{grid-column:1/-1;display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;border-bottom:1px solid rgba(242,238,226,.25);padding-bottom:1.4rem}
+.dato.g b{font-size:clamp(4.5rem,22vw,8rem)}
+.estr{color:var(--corteza);letter-spacing:.12em;font-size:1.3rem}
+
+/* turnos (noche) */
+.night{background:var(--tinta);color:var(--hueso);padding:4.5rem 0 5rem;position:relative}
+.night h2{font:400 clamp(2.2rem,7.5vw,4.6rem)/1 var(--display);max-width:14ch}
+.night .intro{margin-top:1rem;max-width:44ch;opacity:.85}
+.turnos{list-style:none;margin-top:3rem}
+.turnos li{position:relative;padding:1.1rem 0 1.4rem;border-top:1px solid rgba(242,238,226,.3);margin-left:calc(var(--i)*3.2%)}
+.turnos li:last-child{border-bottom:1px solid rgba(242,238,226,.3)}
+.turnos h3{font:400 clamp(3rem,13.5vw,7rem)/.92 var(--display);color:var(--hueso)}
+.turnos li:nth-child(5) h3{color:var(--corteza)}
+.turnos p{max-width:46ch;margin-top:.5rem;opacity:.88}
+.turnos .h{font:400 1.5rem/1 var(--mano);color:var(--salvia);display:block;margin-bottom:.3rem}
+
+/* carta */
+.carta{padding:5rem 0 4.5rem}
+.carta h2,.reseñas h2,.sitio h2,.galeria h2,.pedir h2{font:400 clamp(2.2rem,7.5vw,4.4rem)/1 var(--display)}
+.carta .cab{display:grid;gap:.8rem;margin-bottom:2.6rem}
+.carta .cab p{max-width:46ch}
+.estrella{display:grid;gap:2rem;margin-bottom:3rem}
+.est{display:grid;gap:.9rem;align-content:start;padding:2.2rem 1.6rem 1.8rem 2.2rem;position:relative;clip-path:polygon(var(--f) 0,100% 0,100% 100%,0 100%,0 var(--f))}
+.est:nth-child(1){background:var(--tinta);color:var(--hueso)}
+.est:nth-child(2){background:var(--corteza);color:var(--tinta)}
+.est .tp{font:400 1.7rem/1 var(--mano)}
+.est h3{font:400 clamp(3.4rem,15vw,7rem)/.9 var(--display);letter-spacing:-.02em}
+.est p{max-width:38ch}
+.est .pr{font:700 1.3rem var(--texto)}
+.est:nth-child(1) .pide{color:var(--hueso)}
+.pide{font-weight:700;text-decoration:none;border-bottom:3px solid var(--corteza);padding-bottom:1px}
+.pide:hover{background:var(--corteza);}
+.lista{list-style:none;display:grid;gap:0}
+.lista li{display:grid;grid-template-columns:1fr auto;gap:.1rem 1rem;align-items:baseline;padding:.95rem 0;border-bottom:1.5px dotted var(--tinta)}
+.lista h3{font:700 1.1rem var(--texto)}
+.lista .pr{font:700 1.1rem var(--texto);white-space:nowrap}
+.lista p{grid-column:1/-1;font-size:.96rem;opacity:.82}
+.lista a{grid-column:1/-1;font-size:.9rem;font-weight:700;color:var(--corteza-osc)}
+.carta .lado{display:grid;gap:2rem;margin-top:3rem}
+.pila{position:relative;min-height:545px}
+.pila .corner{position:absolute}
+.pila .p1{width:62%;aspect-ratio:3/4;left:0;top:0;--flap:var(--hueso)}
+.pila .p2{width:56%;aspect-ratio:1/1;right:0;top:120px;--flap:var(--hueso);z-index:2}
+.pila .p3{width:48%;aspect-ratio:3/4;left:12%;top:300px;--flap:var(--hueso)}
+.nota{font:400 1.7rem/1.1 var(--mano);margin-top:1.5rem;color:var(--corteza-osc)}
+
+/* pedir */
+.pedir{background:var(--corteza);padding:4.2rem 0}
+.pedir h2{max-width:14ch}
+.pasos{list-style:none;margin-top:2.4rem;display:grid;gap:0;counter-reset:p}
+.pasos li{counter-increment:p;padding:1.2rem 0 1.4rem;border-top:2px solid var(--tinta);display:grid;grid-template-columns:auto 1fr;gap:0 1.2rem;align-items:start}
+.pasos li::before{content:counter(p);font:400 3.2rem/.9 var(--display)}
+.pasos b{display:block;font-size:1.25rem}
+.pasos li:nth-child(2){margin-left:5%}
+.pasos li:nth-child(3){margin-left:10%}
+.pedir .acc{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+
+/* reseñas */
+.reseñas{padding:5rem 0}
+.reseñas .cab{display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.4rem}
+.reseñas .cab p{font-weight:700}
+.rs{display:grid;gap:2.2rem}
+.rs figure{border-left:6px solid var(--tinta);padding:.2rem 0 .2rem 1.2rem}
+.rs .estr{display:block;margin-bottom:.5rem;font-size:1.1rem}
+.rs blockquote{font:400 1.2rem/1.45 var(--texto)}
+.rs .gr blockquote{font:400 clamp(1.35rem,3.2vw,2rem)/1.3 var(--display)}
+.rs .la blockquote{font-size:1.02rem;line-height:1.55}
+.rs figcaption{margin-top:.7rem;font-size:.9rem;opacity:.8}
+
+/* galería */
+.galeria{background:var(--vino);color:var(--hueso);padding:4.5rem 0 5rem}
+.galeria .cab{display:grid;gap:1rem;margin-bottom:2.2rem}
+.galeria .cab p{max-width:40ch;opacity:.9}
+.mosaico{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:46px;gap:8px}
+.mosaico .corner{--flap:var(--vino)}
+.mosaico .corner:nth-child(1){grid-column:1/5;grid-row:1/6}
+.mosaico .corner:nth-child(2){grid-column:5/7;grid-row:1/4}
+.mosaico .corner:nth-child(3){grid-column:5/7;grid-row:4/8}
+.mosaico .corner:nth-child(4){grid-column:1/3;grid-row:6/10}
+.mosaico .corner:nth-child(5){grid-column:3/5;grid-row:6/9}
+.mosaico .corner:nth-child(6){grid-column:3/7;grid-row:9/13}
+.mosaico .corner:nth-child(7){grid-column:1/3;grid-row:10/13}
+.mosaico .corner:nth-child(8){grid-column:5/7;grid-row:8/9;display:none}
+.mosaico .corner:nth-child(5){grid-row:6/9}
+.galeria .btn{margin-top:2rem}
+
+/* sitio */
+.sitio{padding:5rem 0 4.5rem}
+.sitio .rej{display:grid;gap:2.4rem;margin-top:2.2rem}
+.horas{list-style:none;border-top:2px solid var(--tinta)}
+.horas li{display:flex;justify-content:space-between;gap:1rem;padding:.7rem .5rem;border-bottom:1.5px dotted var(--tinta)}
+.horas li b{font-weight:500}
+.horas li span{text-align:right;font-variant-numeric:tabular-nums}
+.horas li.hoy{background:var(--tinta);color:var(--hueso);border-bottom-color:var(--tinta)}
+.horas li.hoy b{font-weight:900}
+.dir{margin:1.6rem 0;font-size:1.1rem}
+.dir a{font:700 1.7rem/1.1 var(--display);text-decoration:none;display:block;margin-top:.4rem}
+.dir a:hover{color:var(--corteza-osc)}
+.sitio .acc{display:flex;flex-wrap:wrap;gap:.8rem}
+.mapa{position:relative;--flap:var(--hueso);min-height:380px}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0;clip-path:polygon(var(--f) 0,100% 0,100% 100%,0 100%,0 var(--f));filter:grayscale(.5) contrast(1.05)}
+
+/* pie */
+footer{background:var(--tinta);color:var(--hueso);padding:3.2rem 0 2.4rem}
+footer .wrap{display:grid;gap:1.8rem}
+footer .marca b{font-size:1.9rem}
+footer .marca svg{width:64px;height:64px}
+footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+footer a{text-decoration:none;border-bottom:1px solid rgba(242,238,226,.4)}
+footer small{opacity:.7;display:block}
+
+/* franja del dueño */
+.dueno{background:#fff;border-top:10px dashed #d6246e;padding:3rem 0 3.4rem;color:#111}
+.dueno .tag{display:inline-block;background:#d6246e;color:#fff;font-weight:700;padding:.3rem .8rem;margin-bottom:1rem;font-size:.95rem}
+.dueno h2{font:700 1.7rem/1.2 var(--texto);max-width:30ch}
+.dueno ul{margin:1.4rem 0 1.8rem 1.1rem;display:grid;gap:.7rem;max-width:62ch}
+.dueno .btn{background:#d6246e;border-color:#d6246e}
+
+/* barra móvil */
+.movil{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:var(--hueso);border-top:2px solid var(--tinta)}
+.movil .btn{min-height:50px;padding:.5rem .8rem}
+
+@media(min-width:760px){
+  body{padding-bottom:0}
+  .movil{display:none}
+  nav.menu{display:flex;gap:1.6rem}
+  .hero{padding-top:3.4rem}
+  .hero .wrap{grid-template-columns:1.25fr 1fr;align-items:end;gap:2rem}
+  .hero .txt{display:grid;gap:1.6rem;align-self:center}
+  .foto-hero{margin-right:calc((100vw - min(1180px,100vw - 40px))/-2);margin-top:0}
+  .foto-hero.corner{aspect-ratio:4/5}
+  .sello{width:170px;height:170px;left:-60px;bottom:-40px}
+  .bar .wrap{grid-template-columns:1.4fr 1fr 1fr 1fr;align-items:end}
+  .dato.g{grid-column:auto;border:0;padding:0}
+  .estrella{grid-template-columns:1.15fr 1fr;align-items:start}
+  .est:nth-child(2){margin-top:4rem}
+  .carta .lado{grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+  .pila{min-height:830px}
+  .pila .p2{top:210px}
+  .pila .p3{top:480px}
+  .pasos{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .pasos li{margin-left:0!important;border-top:0;border-left:2px solid var(--tinta);padding:.4rem 0 .4rem 1.2rem;grid-template-columns:1fr}
+  .pasos li:nth-child(2){margin-top:2.4rem!important}
+  .pasos li:nth-child(3){margin-top:4.8rem!important}
+  .rs{grid-template-columns:1.3fr 1fr;grid-template-areas:"g a" "g b";gap:2.2rem 4rem}
+  .rs .gr{grid-area:g;align-self:center}
+  .rs .a{grid-area:a}.rs .b{grid-area:b}
+  .mosaico{grid-auto-rows:62px;gap:12px}
+  .galeria .cab{grid-template-columns:1fr 1fr;align-items:end}
+  .sitio .rej{grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+  .mapa{min-height:520px}
+  footer .wrap{grid-template-columns:1fr auto;align-items:center}
+}
+@media(prefers-reduced-motion:reduce){.sello svg{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="seal" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="58" fill="#0d0c0b"/>
+      <path id="arco" d="M24 56 A38 38 0 0 1 96 56" fill="none"/>
+      <text font-family="Schibsted Grotesk,sans-serif" font-size="9.5" font-weight="500" letter-spacing="1.4" fill="#f2eee2"><textPath href="#arco" startOffset="50%" text-anchor="middle">BAR RESTAURANTE</textPath></text>
+      <text x="60" y="68" text-anchor="middle" font-family="Yellowtail,cursive" font-size="34" fill="#f2eee2">El Cantó</text>
+      <g fill="#f2eee2" transform="translate(30 78)"><path d="M10 6c-3-6-9-6-9-1 0 4 5 6 9 5-5 1-8 5-5 8 3 2 6-2 5-6 1 4 3 8 6 6 3-3 0-7-5-8 4 1 9-1 9-5 0-5-6-5-9 1z"/></g>
+      <g fill="#f2eee2" transform="translate(76 86)"><circle cx="0" cy="-4.5" r="3.6"/><circle cx="4.5" cy="0" r="3.6"/><circle cx="0" cy="4.5" r="3.6"/><circle cx="-4.5" cy="0" r="3.6"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Bocatería El Cantó, inicio">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Sello de El Cantó"><use href="#seal"/></svg>
+      <b>El Cantó</b>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#turnos">Turnos</a>
+      <a href="#carta">Carta</a>
+      <a href="#reseñas">Reseñas</a>
+      <a href="#sitio">Horario</a>
+    </nav>
+    <a class="btn" href="tel:+34961781044">Llamar</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <p class="estado" id="estado" role="status"><i></i><span>Comprobando horario…</span></p>
+      <h1><span>El bocata</span><span class="s2">de la</span><span class="s3">esquina.</span></h1>
+      <p class="lema"><em>Cantó</em>, en valenciano, es esquina. Pan de pueblo, cocina casera y cenas de viernes y sábado <span class="edit">en Benifaió</span>.</p>
+      <div class="acc">
+        <a class="btn" href="tel:+34961781044">Llamar al 961 78 10 44</a>
+        <a class="btn line" href="https://wa.me/34961781044?text=Hola%2C%20quer%C3%ADa%20hacer%20un%20pedido%20para%20recoger." target="_blank" rel="noopener"><span class="edit">Pedir por WhatsApp</span></a>
+      </div>
+    </div>
+    <div class="foto-hero corner" style="--flap:var(--hueso)">
+      <img src="img/bocata.jpg" alt="Bocadillo de fritura de pescado y pimiento en pan de pueblo, cortado por la mitad" width="1050" height="1397" fetchpriority="high">
+      <div class="sello" aria-hidden="true">
+        <svg viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="78" fill="#b88b62"/>
+          <circle cx="80" cy="80" r="70" fill="none" stroke="#0d0c0b" stroke-width="1.5"/>
+          <path id="circ" d="M80 80 m-55 0 a55 55 0 1 1 110 0 a55 55 0 1 1 -110 0" fill="none"/>
+          <text font-family="Schibsted Grotesk,sans-serif" font-weight="700" font-size="13" fill="#0d0c0b"><textPath href="#circ" textLength="340" lengthAdjust="spacing">PAN DE PUEBLO · COCINA CASERA · BOCATAS · </textPath></text>
+          <g fill="#0d0c0b" transform="translate(80 80)"><circle cx="0" cy="-8" r="6"/><circle cx="8" cy="0" r="6"/><circle cx="0" cy="8" r="6"/><circle cx="-8" cy="0" r="6"/></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bar" aria-label="El Cantó en datos">
+  <div class="wrap">
+    <div class="dato g"><b>4,3</b><div><span class="estr" aria-hidden="true">★★★★☆</span><br><span>205 reseñas en Google</span></div></div>
+    <div class="dato"><b>7:00</b><span>abrimos a primera hora entre semana, para el café</span></div>
+    <div class="dato"><b>2:00</b><span>viernes y sábado cerramos de madrugada</span></div>
+    <div class="dato"><b>Casa</b><span>cocina casera, con terraza cubierta</span></div>
+  </div>
+</section>
+
+<section class="night" id="turnos">
+  <div class="wrap">
+    <h2>Cinco turnos en la misma esquina.</h2>
+    <p class="intro">De la primera hora de la mañana al cierre de madrugada del fin de semana. Esto es lo que se sirve en El Cantó.</p>
+    <ol class="turnos">
+      <li style="--i:0"><h3>Desayunos</h3><p>El café, dicen las reseñas, sale perfecto. Abrimos a las 7:00 de lunes a viernes, salvo martes (9:00).</p></li>
+      <li style="--i:1"><h3>Almuerzos</h3><p>El almuerzo valenciano de toda la vida: bocadillo cortado por la mitad en pan de pueblo crujiente.</p></li>
+      <li style="--i:2"><h3>Menú del día</h3><p>Ensaladita valenciana, cacaos del collaret y el plato de cada día. <span class="edit">Pregunta por el menú de hoy.</span></p></li>
+      <li style="--i:3"><h3>Tardeo</h3><p>Una caña fría, unas olivas y una ración de calamares.</p></li>
+      <li style="--i:4"><h3>Cenas</h3><p>Los viernes y sábados de noche, hasta las 2:00. <span class="edit">Croquetas de pollo caseras, patatas trufadas y queso frito con mermelada de arándanos.</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="carta" id="carta">
+  <div class="wrap">
+    <div class="cab">
+      <h2>Lo que se pide en El Cantó</h2>
+      <p>Los bocadillos mandan. Detrás vienen las raciones, el menú del día y los postres.</p>
+    </div>
+
+    <div class="estrella">
+      <article class="est">
+        <h3>Lechón</h3>
+        <span class="tp">Bocadillo</span>
+        <p>Cerdo a baja temperatura con encurtido de cebolla morada y cilantro fresco.</p>
+        <p class="pr edit">6,50 €</p>
+        <a class="pide" href="https://wa.me/34961781044?text=Hola%2C%20quer%C3%ADa%20pedir%20un%20bocadillo%20de%20lech%C3%B3n." target="_blank" rel="noopener"><span class="edit">Pedirlo por WhatsApp</span></a>
+      </article>
+      <article class="est">
+        <h3>Ranchero</h3>
+        <span class="tp">Bocadillo</span>
+        <p>Secreto a dados con pimiento italiano, patatas fritas y salsa gaucha. Con cebolla frita extra, si se pide.</p>
+        <p class="pr edit">6,50 €</p>
+        <a class="pide" href="https://wa.me/34961781044?text=Hola%2C%20quer%C3%ADa%20pedir%20un%20bocadillo%20ranchero." target="_blank" rel="noopener"><span class="edit">Pedirlo por WhatsApp</span></a>
+      </article>
+    </div>
+
+    <div class="lado">
+      <div class="pila" aria-hidden="false">
+        <div class="corner p1"><img src="img/hamburguesa.jpg" alt="Hamburguesa con huevo frito y patatas sobre tabla de madera" width="1400" height="1050" loading="lazy"></div>
+        <div class="corner p2"><img src="img/calamares.jpg" alt="Ración de calamares fritos con salsas, en bandeja alargada" width="1000" height="1333" loading="lazy"></div>
+        <div class="corner p3"><img src="img/cremaet.jpg" alt="Cremaet servido en vaso de cristal con cucharilla" width="1000" height="1342" loading="lazy"></div>
+      </div>
+      <div>
+        <ul class="lista">
+          <li><h3>Bocadillo de sepia</h3><span class="pr edit">6,50 €</span><p>Sepia tierna, rebozada, en pan de pueblo.</p></li>
+          <li><h3>Pan bao con calamares</h3><span class="pr edit">5,50 €</span><p>Para quien quiere probar algo distinto del bocata.</p></li>
+          <li><h3>Hamburguesa de pollo</h3><span class="pr edit">8,50 €</span><p>Jugosa y con patatas.</p></li>
+          <li><h3>Calamares, ración</h3><span class="pr edit">9,00 €</span><p>Fritos al momento, con sus salsas.</p></li>
+          <li><h3>Croquetas de pollo caseras</h3><span class="pr edit">8,00 €</span><p>Hechas en casa.</p></li>
+          <li><h3>Queso frito con mermelada de arándanos</h3><span class="pr edit">7,50 €</span><p>Para compartir, o no.</p></li>
+          <li><h3>Patatas trufadas</h3><span class="pr edit">6,50 €</span><p>Para acompañar cualquier cosa.</p></li>
+          <li><h3>Cremaet</h3><span class="pr edit">2,50 €</span><p>Bien calentito, para cerrar el almuerzo.</p></li>
+        </ul>
+        <p class="nota">Y cada día, el menú del día.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pedir" id="pedir">
+  <div class="wrap">
+    <h2>Pídelo antes de llegar.</h2>
+    <ol class="pasos">
+      <li><div><b>Llama o escribe</b>Al 961 78 10 44, por teléfono o <span class="edit">por WhatsApp</span>.</div></li>
+      <li><div><b>Dinos qué y a qué hora</b>Bocata, ración o lo que te apetezca, y a qué hora pasas.</div></li>
+      <li><div><b>Recógelo en el cantó</b>Tu pedido, para llevar o para tomarlo en la terraza.</div></li>
+    </ol>
+    <div class="acc">
+      <a class="btn" href="tel:+34961781044">Llamar ahora</a>
+      <a class="btn hue line" style="color:var(--tinta);border-color:var(--tinta)" href="https://wa.me/34961781044?text=Hola%2C%20quer%C3%ADa%20hacer%20un%20pedido%20para%20recoger." target="_blank" rel="noopener"><span class="edit">Escribir por WhatsApp</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="reseñas" id="reseñas">
+  <div class="wrap">
+    <div class="cab">
+      <h2>Lo que dicen en Google</h2>
+      <p><span class="estr" aria-hidden="true">★★★★☆</span> 4,3 sobre 205 reseñas</p>
+    </div>
+    <div class="rs">
+      <figure class="gr">
+        <span class="estr" aria-label="5 estrellas">★★★★★</span>
+        <blockquote>«Bar Restaurante El Cantó es una joya en Benifaió. La comida es simplemente excepcional, con una relación calidad-precio inmejorable. Cada plato está preparado con esmero y se nota la calidad de los ingredientes. He comido muy bien aquí y sin duda es la mejor alternativa en Benifaió para disfrutar de una excelente comida. ¡Un lugar encantador que no te puedes perder!»</blockquote>
+        <figcaption>Reseñas de Google</figcaption>
+      </figure>
+      <figure class="a">
+        <span class="estr" aria-label="5 estrellas">★★★★★</span>
+        <blockquote>«He almorzado varias veces y he de decir que los bocadillos están muy buenos y la atención es rápida y muy amable 👍🏻»</blockquote>
+        <figcaption>Reseñas de Google</figcaption>
+      </figure>
+      <figure class="b la">
+        <span class="estr" aria-label="5 estrellas">★★★★★</span>
+        <blockquote>«Si tuviese que definir el servicio y la comida con una sola palabra sería ESPECTACULAR. Fuimos a comer un menú en donde nos pusieron una ensalada muy fresquita y típica de Valencia, el pan bao con calamares, increíble !! Además, fuimos en la noche, donde probamos las croquetas de pollo, súper ricas y caseras, las patatas trufadas y el queso frito con mermelada de arándanos. Si tuviésemos que escoger solo un plato no podríamos decir cual fue el mejor. Finalmente nos pedimos una hamburguesa de pollo, que para ser de pollo estaba muy jugosa. Recomendable al 100% tanto el servicio como la calidad de comida, ya que el rango de precios es más que razonable para lo que te ofrecen. Sin duda alguna, repetiremos!!»</blockquote>
+        <figcaption>Reseñas de Google</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <div class="cab">
+      <h2>El cantó, por dentro y por fuera</h2>
+      <p>Fotos de la esquina, de la barra y de la mesa. Más en el Instagram de El Cantó.</p>
+    </div>
+    <div class="mosaico">
+      <div class="corner"><img src="img/arroz.jpg" alt="Paella de arroz en su sartén" width="1400" height="788" loading="lazy"></div>
+      <div class="corner"><img src="img/tomate.jpg" alt="Plato servido sobre pizarra" width="1400" height="1050" loading="lazy"></div>
+      <div class="corner"><img src="img/fachada.jpg" alt="Fachada de la Bocatería El Cantó" width="1400" height="788" loading="lazy"></div>
+      <div class="corner"><img src="img/fachada-noche.jpg" alt="Entrada del bar de noche, con el rótulo iluminado" width="1400" height="1050" loading="lazy"></div>
+      <div class="corner"><img src="img/postre.jpg" alt="Postre con fresa" width="1100" height="1100" loading="lazy"></div>
+      <div class="corner"><img src="img/interior.jpg" alt="Interior del local con barra y mesas" width="1400" height="1050" loading="lazy"></div>
+      <div class="corner"><img src="img/hamburguesa.jpg" alt="Hamburguesa con patatas" width="1400" height="1050" loading="lazy"></div>
+    </div>
+    <a class="btn sal" href="https://www.instagram.com/restaurante_elcanto/" target="_blank" rel="noopener">Síguenos en Instagram @restaurante_elcanto</a>
+  </div>
+</section>
+
+<section class="sitio" id="sitio">
+  <div class="wrap">
+    <h2>Ven a la esquina</h2>
+    <div class="rej">
+      <div>
+        <p class="estado" id="estado2" role="status"><i></i><span>Comprobando horario…</span></p>
+        <p class="dir" style="margin-top:1.4rem">Bar Restaurante El Cantó<br><span class="edit">Carrer de la Mestra Pepita Olivé Martí, 4</span>, 46450 Benifaió (Valencia)
+          <a href="tel:+34961781044">961 78 10 44</a></p>
+        <ul class="horas" id="horas" aria-label="Horario de apertura">
+          <li data-d="1"><b>Lunes</b><span>7:00 – 21:00</span></li>
+          <li data-d="2"><b>Martes</b><span>9:00 – 21:00</span></li>
+          <li data-d="3"><b>Miércoles</b><span>7:00 – 21:00</span></li>
+          <li data-d="4"><b>Jueves</b><span>7:00 – 21:00</span></li>
+          <li data-d="5"><b>Viernes</b><span>7:00 – 2:00</span></li>
+          <li data-d="6"><b>Sábado</b><span>8:00 – 15:00 y 18:30 – 2:00</span></li>
+          <li data-d="0"><b>Domingo</b><span class="edit">8:30 – 14:00</span></li>
+        </ul>
+        <div class="acc" style="margin-top:1.6rem">
+          <a class="btn" href="tel:+34961781044">Llamar</a>
+          <a class="btn line" href="https://wa.me/34961781044?text=Hola%2C%20quer%C3%ADa%20hacer%20un%20pedido%20para%20recoger." target="_blank" rel="noopener"><span class="edit">Escribir por WhatsApp</span></a>
+        </div>
+      </div>
+      <div class="mapa corner">
+        <iframe title="Mapa de Bar Restaurante El Cantó en Benifaió" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=39.28049,-0.4263857&z=17&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="marca" href="#inicio"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#seal"/></svg><b>El Cantó</b></a>
+      <small style="margin-top:.8rem">Bar Restaurante El Cantó, Benifaió (Valencia)</small>
+    </div>
+    <ul>
+      <li><a href="https://www.instagram.com/restaurante_elcanto/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="#">Aviso legal</a></li>
+      <li><a href="#">Privacidad</a></li>
+      <li><a href="#">Cookies</a></li>
+    </ul>
+  </div>
+</footer>
+
+<section class="dueno" aria-label="Franja para el dueño">
+  <div class="wrap">
+    <span class="tag">Esta franja no aparece en la web publicada</span>
+    <h2>Para Bocatería El Cantó: lo que cambia con una web propia</h2>
+    <ul>
+      <li>Pedidos directos por teléfono o WhatsApp, sin comisiones de plataformas: el cliente llama al 961 78 10 44 desde el botón fijo del móvil.</li>
+      <li>Salir mejor en Google y en Maps cuando buscan "bocatería en Benifaió" o "almuerzos en Benifaió", con carta, horario y fotos propias.</li>
+      <li>Carta, menú del día y horario fáciles de actualizar, incluidos los avisos de reapertura de cenas que hoy solo viven en Instagram.</li>
+      <li>Su 4,3 en Google con 205 reseñas presentado con una imagen profesional, y reseñas reales a la vista de quien aún no los conoce.</li>
+    </ul>
+    <button class="btn" type="button" id="resaltar">Resaltar datos a confirmar</button>
+  </div>
+</section>
+
+<div class="movil">
+  <a class="btn line" href="tel:+34961781044">Llamar</a>
+  <a class="btn" href="https://wa.me/34961781044?text=Hola%2C%20quer%C3%ADa%20hacer%20un%20pedido%20para%20recoger." target="_blank" rel="noopener"><span class="edit">Pedir por WhatsApp</span></a>
+</div>
+
+<script>
+(function(){
+  // Horario en minutos desde las 0:00. Un fin > 1440 continúa en la madrugada del día siguiente.
+  var H={1:[[420,1260]],2:[[540,1260]],3:[[420,1260]],4:[[420,1260]],5:[[420,1560]],6:[[480,900],[1110,1560]],0:[[510,840]]};
+  var DN=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  function ahora(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value});
+    var map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    return {d:map[o.weekday],m:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+  }
+  function hh(m){m=m%1440;var h=Math.floor(m/60),mm=m%60;return h+':'+(mm<10?'0':'')+mm}
+  function calcular(){
+    var n=ahora(),d=n.d,m=n.m,i,t;
+    // turnos que vienen de ayer (madrugada)
+    var ay=H[(d+6)%7];
+    for(i=0;i<ay.length;i++){ if(ay[i][1]>1440 && m<ay[i][1]-1440) return {abierto:true,hasta:ay[i][1]-1440,d:d}; }
+    for(i=0;i<H[d].length;i++){ t=H[d][i]; if(m>=t[0]&&m<t[1]) return {abierto:true,hasta:t[1],d:d}; }
+    for(i=0;i<H[d].length;i++){ t=H[d][i]; if(m<t[0]) return {abierto:false,abre:t[0],cuando:'hoy',d:d}; }
+    for(var k=1;k<=7;k++){ var dd=(d+k)%7; if(H[dd].length) return {abierto:false,abre:H[dd][0][0],cuando:(k===1?'mañana':'el '+DN[dd]),d:d}; }
+  }
+  function pintar(){
+    var r=calcular(),txt;
+    if(r.abierto) txt='Abierto ahora, cerramos a las '+hh(r.hasta);
+    else txt='Cerrado ahora. Abrimos '+r.cuando+' a las '+hh(r.abre);
+    ['estado','estado2'].forEach(function(id){
+      var e=document.getElementById(id); if(!e) return;
+      e.classList.toggle('abierto',!!r.abierto);
+      e.querySelector('span').textContent=txt;
+    });
+    var li=document.querySelectorAll('#horas li');
+    for(var j=0;j<li.length;j++){ li[j].classList.toggle('hoy',parseInt(li[j].getAttribute('data-d'),10)===r.d); }
+  }
+  pintar(); setInterval(pintar,60000);
+  document.getElementById('resaltar').addEventListener('click',function(){document.body.classList.toggle('ver-editables')});
+})();
+</script>
+</body>
+</html>
